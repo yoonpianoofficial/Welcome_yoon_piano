@@ -6,7 +6,9 @@
   <title>윤피아노교습소 | 제주 애월 하귀 피아노</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://oapi.map.naver.com">
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Hahmlet:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <script defer src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=1q3ouc51s3&callback=initYoonPianoMap"></script>
   <meta name="description" content="제주 애월 하귀초등학교 맞은편. 원장님이 직접 맞춤 지도하며, 매주 화요일에는 아이가 교재에서 고른 곡을 연주하는 작은 연주회가 열리는 소수정예 피아노 교습소입니다.">
   <meta name="theme-color" content="#fffaf2">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
@@ -264,11 +266,14 @@
     .pickup-note { margin: 1.6rem 0; padding: 1.2rem 1.3rem; border: 1px solid var(--line); border-left: 3px solid var(--poppy); border-radius: 0 14px 14px 0; background: rgba(255,254,250,.7); }
     .pickup-note strong { display: block; margin-bottom: .3rem; color: var(--ink); font-family: var(--serif); font-weight: 500; }
     .pickup-note p { margin: 0; font-size: .92rem; }
-    .location-sign { min-height: 380px; position: relative; overflow: hidden; display: grid; place-items: center; padding: 2rem; background: var(--green-deep); color: white; text-align: center; }
-    .location-sign::before { content: "JEJU"; position: absolute; right: -2%; bottom: -10%; color: rgba(255,255,255,.06); font-family: var(--serif); font-size: clamp(6rem, 15vw, 11rem); font-weight: 700; }
-    .location-sign div { position: relative; z-index: 1; }
-    .location-sign small { display: block; margin-bottom: 1rem; color: #f0dfa0; font-family: var(--hand); font-size: 1.4rem; font-weight: 400; letter-spacing: .02em; }
-    .location-sign strong { display: block; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 500; line-height: 1.35; }
+    .location-map-wrap { min-height: 430px; position: relative; overflow: hidden; background: #e8ede5; }
+    .location-map { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .location-map-fallback { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; padding: 2rem; background: var(--green-deep); color: white; text-align: center; }
+    .location-map-wrap.map-ready .location-map-fallback { display: none; }
+    .location-map-fallback small { display: block; margin-bottom: .7rem; color: #f0dfa0; font-family: var(--hand); font-size: 1.35rem; }
+    .location-map-fallback strong { display: block; font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.7rem); font-weight: 500; line-height: 1.4; }
+    .map-open-link { position: absolute; z-index: 5; right: 14px; top: 14px; padding: .7rem .9rem; border: 1px solid rgba(77,66,55,.16); border-radius: 12px; background: rgba(255,254,250,.96); color: var(--green-deep); box-shadow: 0 7px 22px rgba(62,57,52,.15); font-size: .86rem; font-weight: 700; line-height: 1.2; }
+    .map-open-link:hover, .map-open-link:focus-visible { background: var(--green-deep); color: #fff; }
 
     .contact-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
     .pending-note { margin: 1.2rem auto 0 !important; font-size: .8rem; opacity: .8; }
@@ -332,7 +337,7 @@
       .cards { grid-template-columns: 1fr 1fr; }
       .space-photo { min-height: 480px; }
       .location-panel { grid-template-columns: 1fr; }
-      .location-sign { min-height: 280px; }
+      .location-map-wrap { min-height: 340px; }
       .recital-copy h2 { max-width: 72%; }
       .recital-flower { right: 0; top: 76px; width: clamp(136px, 23vw, 174px); }
     }
@@ -513,7 +518,11 @@
     <section class="location" id="location">
       <div class="container location-panel reveal">
         <div class="location-copy" id="contact"><p class="eyebrow">Location & Contact</p><h2>하귀초등학교<br>맞은편에 있습니다.</h2><p>수업 방식이나 아이에게 맞는 시작점이 궁금하시면 편하게 문의해 주세요.</p><div class="pickup-note"><strong>차량은 운행하지 않습니다.</strong><p>수업을 마친 뒤 보호자께서 도착하실 때까지 학원에서 기다릴 수 있어, 퇴근 후 직접 픽업하실 수 있습니다.</p></div><p><strong>제주특별자치도 제주시 애월읍</strong><br><span>하귀로 43 1층</span></p><div class="contact-actions"><span class="btn primary" aria-disabled="true">전화 문의</span><a class="btn secondary" href="https://naver.me/GFs34DB0" target="_blank" rel="noopener noreferrer" aria-label="네이버지도에서 윤피아노교습소 위치 보기">네이버지도에서 보기</a></div><p class="pending-note">전화번호 확인 후 전화 문의 버튼이 연결됩니다.</p></div>
-        <div class="location-sign" aria-label="윤피아노 위치 핵심 정보"><div><small>제주 애월, 가까운 곳에서 ♪</small><strong>하귀초등학교<br>맞은편</strong></div></div>
+        <div class="location-map-wrap" id="location-map-wrap">
+          <div class="location-map" id="naver-map" role="region" aria-label="윤피아노교습소 위치를 표시한 네이버 지도"></div>
+          <div class="location-map-fallback" aria-hidden="true"><div><small>제주 애월, 가까운 곳에서 ♪</small><strong>하귀초등학교<br>맞은편</strong></div></div>
+          <a class="map-open-link" href="https://naver.me/GFs34DB0" target="_blank" rel="noopener noreferrer">큰 지도 보기</a>
+        </div>
       </div>
     </section>
   </main>
@@ -533,6 +542,32 @@
   <div class="share-status" role="status" aria-live="polite"></div>
 
   <script>
+    function initYoonPianoMap() {
+      const mapWrap = document.querySelector('#location-map-wrap');
+      const mapElement = document.querySelector('#naver-map');
+      if (!mapWrap || !mapElement || !window.naver || !naver.maps) return;
+
+      const academyPosition = new naver.maps.LatLng(33.4804065, 126.4019429);
+      const map = new naver.maps.Map(mapElement, {
+        center: academyPosition,
+        zoom: 17,
+        minZoom: 7,
+        zoomControl: true,
+        zoomControlOptions: { position: naver.maps.Position.TOP_LEFT },
+        mapTypeControl: false,
+        scaleControl: false,
+        logoControlOptions: { position: naver.maps.Position.BOTTOM_LEFT }
+      });
+
+      new naver.maps.Marker({
+        position: academyPosition,
+        map: map,
+        title: '윤피아노교습소'
+      });
+
+      mapWrap.classList.add('map-ready');
+    }
+
     const header = document.querySelector('#header');
     const progress = document.querySelector('.scroll-progress');
     const menuButton = document.querySelector('.menu-button');
