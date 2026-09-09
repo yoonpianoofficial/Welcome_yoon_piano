@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>윤피아노교습소 | 제주 애월 하귀 피아노</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Hahmlet:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <meta name="description" content="제주 애월 하귀초등학교 맞은편. 원장님이 직접 맞춤 지도하며, 매주 화요일에는 아이가 교재에서 고른 곡을 연주하는 작은 연주회가 열리는 소수정예 피아노 교습소입니다.">
+  <meta name="theme-color" content="#fffaf2">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="윤피아노교습소">
+  <meta property="og:title" content="좋아하는 음악을 연주하며, 나다움을 찾아갑니다 | 윤피아노교습소">
+  <meta property="og:description" content="아이에게 맞춘 개별 지도와 매주 화요일 좋아하는 곡을 직접 연주하는 작은 연주회가 있는 제주 애월의 피아노 교습소입니다.">
+  <meta property="og:image" content="assets/og-yoon-piano.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="햇살이 드는 공간에 피아노와 꽃, 식물이 함께 있는 윤피아노교습소 공유 이미지">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="좋아하는 음악을 연주하며, 나다움을 찾아갑니다 | 윤피아노교습소">
+  <meta name="twitter:description" content="아이에게 맞춘 개별 지도와 매주 화요일 좋아하는 곡을 직접 연주하는 작은 연주회가 있는 제주 애월의 피아노 교습소입니다.">
+  <meta name="twitter:image" content="assets/og-yoon-piano.jpg">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "윤피아노교습소",
+      "description": "아이마다 다른 속도와 성향을 살피며 원장님이 직접 지도하고, 매주 화요일 작은 연주회를 진행하는 소수정예 피아노 교습소",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "제주시 애월읍",
+        "addressRegion": "제주특별자치도",
+        "addressCountry": "KR"
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --ivory: #fffaf2;
+      --cream: #f7eddf;
+      --paper: #fffefa;
+      --butter: #f0dc91;
+      --apricot: #e27c69;
+      --poppy: #dc5549;
+      --blush: #f7d6cc;
+      --green: #738d64;
+      --green-deep: #526b49;
+      --rose: #d36c73;
+      --brown: #725a47;
+      --ink: #3e3934;
+      --muted: #6c645d;
+      --line: rgba(77, 66, 55, .15);
+      --serif: "Hahmlet", "Noto Serif KR", "Nanum Myeongjo", serif;
+      --sans: "Gowun Dodum", "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      --hand: "Nanum Pen Script", cursive;
+      --radius-s: 12px;
+      --radius-m: 22px;
+      --radius-l: 36px;
+      --shadow: 0 24px 70px rgba(78, 62, 46, .13);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+    body.menu-open { overflow: hidden; }
+    ::selection { background: var(--butter); color: var(--ink); }
+    .scroll-progress { position: fixed; z-index: 100; left: 0; top: 0; width: 0; height: 3px; background: var(--poppy); }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .skip-link {
+      position: fixed; left: 1rem; top: -4rem; z-index: 100;
+      background: var(--ink); color: white; padding: .7rem 1rem; border-radius: 8px;
+    }
+    .skip-link:focus { top: 1rem; }
+    .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .6rem;
+      margin: 0 0 1rem; padding: .35rem .7rem; border-radius: 999px;
+      background: rgba(247,214,204,.6); color: var(--green-deep); font-size: .82rem;
+      font-weight: 400; letter-spacing: .07em;
+    }
+    .eyebrow::before { content: ""; width: 16px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2 { font-family: var(--serif); font-weight: 500; letter-spacing: -.035em; }
+    h1 { font-size: clamp(2.55rem, 6.2vw, 5.25rem); line-height: 1.16; margin-bottom: 1.6rem; }
+    h1 em {
+      position: relative; z-index: 0; color: var(--green-deep); font-style: normal;
+      white-space: nowrap;
+    }
+    h1 em::after {
+      content: ""; position: absolute; z-index: -1; left: -.05em; right: -.08em;
+      bottom: .06em; height: .24em; border-radius: 999px;
+      background: rgba(220,85,73,.24); transform: rotate(-1.5deg);
+    }
+    h2 { font-size: clamp(2rem, 4vw, 3.55rem); line-height: 1.28; margin-bottom: 1.35rem; }
+    h3 { font-size: 1.18rem; line-height: 1.55; font-weight: 400; }
+    .lead { color: var(--muted); font-size: clamp(1.02rem, 1.45vw, 1.18rem); line-height: 1.9; }
+
+    .announcement {
+      min-height: 38px; display: flex; align-items: center; justify-content: center;
+      padding: .45rem 1rem; background: var(--green-deep); color: rgba(255,255,255,.9);
+      text-align: center; font-size: .78rem; letter-spacing: .04em;
+    }
+    .announcement strong { color: #ffc9bd; font-weight: 600; }
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255, 250, 242, .9); backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent; transition: border-color .25s ease;
+    }
+    header.scrolled { border-color: var(--line); box-shadow: 0 10px 35px rgba(62,57,52,.06); }
+    .nav { height: 82px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; flex-direction: column; line-height: 1.15; }
+    .brand strong { display: flex; align-items: center; font-family: var(--serif); font-size: 1.28rem; font-weight: 700; letter-spacing: -.02em; }
+    .brand small { margin-top: .3rem; color: var(--muted); font-size: .66rem; letter-spacing: .15em; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; font-size: .92rem; }
+    .nav-links a { position: relative; }
+    .nav-links a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -.45rem; height: 1px; background: var(--green); transition: right .2s; }
+    .nav-links a:hover::after, .nav-links a:focus-visible::after { right: 0; }
+    .nav-cta, .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: .75rem 1.25rem; border-radius: 999px;
+      border: 1px solid var(--green-deep); font-weight: 700; line-height: 1.2;
+      transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+    }
+    .nav-cta, .btn.primary { background: var(--green-deep); color: #fff; box-shadow: inset 0 -2px 0 rgba(220,85,73,.38); }
+    .btn.secondary { border-color: var(--line); background: rgba(255,255,255,.42); }
+    .nav-cta:hover, .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(63, 74, 56, .14); }
+    .menu-button { display: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: transparent; }
+
+    .hero { position: relative; overflow: hidden; padding: 76px 0 104px; }
+    .hero::before {
+      content: ""; position: absolute; width: 540px; height: 540px; border-radius: 50%;
+      right: -220px; top: -260px; background: rgba(247, 214, 204, .58); filter: blur(1px);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.03fr .97fr; gap: clamp(42px, 7vw, 92px); align-items: center; }
+    .hero-copy { padding-block: 24px; position: relative; z-index: 1; }
+    .hand-note {
+      margin: 0 0 .35rem; color: var(--apricot); font-family: var(--hand);
+      font-size: clamp(1.35rem, 2.2vw, 1.72rem); line-height: 1.2;
+      transform: rotate(-1.2deg); transform-origin: left center;
+    }
+    .hero-copy .lead { max-width: 630px; margin-bottom: 1.75rem; }
+    .supporting { display: flex; flex-wrap: wrap; gap: .55rem; margin: 0 0 2rem; padding: 0; list-style: none; }
+    .supporting li { padding: .48rem .78rem; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.38); color: #5f574f; font-size: .84rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-bottom: 2.3rem; }
+    .location-line { display: flex; gap: .8rem; align-items: center; color: var(--brown); font-weight: 700; font-size: .94rem; }
+    .location-line span:first-child { width: 9px; height: 9px; border-radius: 50%; background: var(--poppy); box-shadow: 0 0 0 6px rgba(220,85,73,.13); }
+
+    .hero-visual { position: relative; min-height: 620px; }
+    .hero-note {
+      position: absolute; z-index: 2; right: -14px; top: 9%; width: 74px; height: 74px;
+      display: grid; place-items: center; border-radius: 50%; background: var(--blush);
+      color: var(--green-deep); font-family: var(--serif); font-size: 2.3rem;
+      box-shadow: 0 12px 28px rgba(82,107,73,.15); transform: rotate(8deg);
+    }
+    .photo-shell { position: absolute; inset: 0 0 44px 34px; border-radius: 32px 150px 32px 32px; overflow: hidden; background: #dfd6c7; box-shadow: var(--shadow); border: 7px solid rgba(255,253,248,.82); }
+    .photo-shell img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 39% center; }
+    .visual-caption { position: absolute; left: 0; bottom: 0; width: 215px; padding: 1.1rem 1.25rem; border-radius: 18px; background: var(--paper); box-shadow: 0 12px 36px rgba(73,58,43,.12); }
+    .visual-caption b { display: block; font-family: var(--serif); font-size: 1.2rem; margin-bottom: .2rem; }
+    .visual-caption span { color: var(--muted); font-size: .82rem; }
+    .proof-strip { margin-top: -36px; position: relative; z-index: 3; }
+    .proof-inner {
+      display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line);
+      border-radius: 20px; overflow: hidden; background: rgba(255,253,248,.94);
+      box-shadow: 0 14px 45px rgba(80,65,50,.07);
+    }
+    .proof-item { padding: 1.35rem 1.5rem; border-right: 1px solid var(--line); }
+    .proof-item:last-child { border-right: 0; }
+    .proof-item small { display: block; margin-bottom: .18rem; color: var(--apricot); font-family: var(--hand); font-size: 1.1rem; font-weight: 400; letter-spacing: 0; }
+    .proof-item strong { font-family: var(--serif); font-size: 1rem; font-weight: 500; }
+
+    section { padding: 112px 0; }
+    .section-intro { max-width: 740px; margin-bottom: 52px; }
+    .why { position: relative; overflow: hidden; background: var(--paper); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { min-height: 260px; padding: 1.9rem; border: 1px solid var(--line); border-radius: var(--radius-m); background: rgba(255,255,255,.5); transition: transform .25s ease, background .25s ease, box-shadow .25s ease; }
+    .card:nth-child(2) { background: rgba(234,217,134,.23); }
+    .card:nth-child(3) { background: rgba(115,141,100,.10); }
+    .card:hover { transform: translateY(-5px); background: var(--paper); box-shadow: var(--shadow); }
+    .card-index { display: block; margin-bottom: 3rem; color: var(--apricot); font-family: var(--hand); font-size: 1.18rem; font-weight: 400; letter-spacing: 0; }
+    .card p { color: var(--muted); margin-bottom: 0; font-size: .94rem; }
+
+    .recital { position: relative; overflow: hidden; padding-top: 0; }
+    .recital-panel {
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: .88fr 1.12fr; gap: clamp(40px, 7vw, 86px);
+      padding: clamp(38px, 7vw, 82px); border-radius: var(--radius-l);
+      background: #e3a087; color: #332e2a;
+    }
+    .recital-panel::after {
+      content: "♪"; position: absolute; right: 4%; top: -9%;
+      font-family: var(--serif); font-size: clamp(10rem, 24vw, 20rem);
+      line-height: 1; color: rgba(255,255,255,.13); transform: rotate(8deg);
+    }
+    .recital-panel .eyebrow { color: #4f443b; background: rgba(255,253,248,.28); }
+    .recital-panel .lead { color: #54483f; }
+    .recital-copy { position: relative; z-index: 2; }
+    .recital-copy h2 { position: relative; z-index: 2; max-width: 78%; }
+    .recital-flower {
+      position: absolute; z-index: 1; right: -34px; top: 74px;
+      width: clamp(138px, 15vw, 190px); height: auto;
+      transform: rotate(3deg); transform-origin: center;
+      filter: drop-shadow(0 10px 16px rgba(92,67,48,.10));
+      pointer-events: none; user-select: none;
+    }
+    .recital-badge {
+      display: inline-block; margin-bottom: 1.2rem; padding: .5rem .8rem;
+      border: 1px solid rgba(51,46,42,.22); border-radius: 999px;
+      font-size: .76rem; font-weight: 800; letter-spacing: .08em;
+    }
+    .recital-flow { position: relative; z-index: 1; display: grid; gap: 12px; align-content: center; }
+    .recital-step {
+      display: grid; grid-template-columns: 54px 1fr; gap: 1rem; align-items: center;
+      padding: 1.25rem; border-radius: 18px; background: rgba(255,253,248,.72);
+      border: 1px solid rgba(255,255,255,.46); backdrop-filter: blur(6px);
+    }
+    .recital-step span {
+      display: grid; place-items: center; width: 46px; height: 46px;
+      border-radius: 50%; background: var(--paper); font-family: var(--serif);
+      color: var(--brown); font-size: 1.05rem;
+    }
+    .recital-step h3 { margin: 0 0 .15rem; }
+    .recital-step p { margin: 0; color: #675a50; font-size: .9rem; }
+
+    .space { position: relative; overflow: hidden; background: var(--cream); }
+    .space-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(40px, 7vw, 86px); align-items: center; }
+    .space-photo { position: relative; min-height: 540px; margin: 0; overflow: hidden; border-radius: 32px 120px 32px 32px; box-shadow: var(--shadow); }
+    .space-photo picture, .space-photo img { width: 100%; height: 100%; display: block; }
+    .space-photo img { position: absolute; inset: 0; object-fit: cover; object-position: 35% center; }
+    .space-copy .lead { margin-bottom: 1.6rem; }
+    .space-features { display: grid; gap: .75rem; margin: 0; padding: 0; list-style: none; }
+    .space-features li { padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,254,250,.72); }
+    .space-features strong { display: block; margin-bottom: .18rem; color: var(--ink); font-family: var(--serif); font-weight: 500; }
+    .space-features p { margin: 0; color: var(--muted); font-size: .92rem; line-height: 1.7; }
+
+    .blog { position: relative; overflow: hidden; padding-block: 88px; }
+    .blog-panel { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: clamp(32px, 5vw, 58px); border: 1px solid var(--line); border-radius: var(--radius-l); background: var(--paper); }
+    .blog-panel h2 { margin-bottom: .7rem; }
+    .blog-panel p { max-width: 650px; margin-bottom: 0; color: var(--muted); }
+    .blog-panel .btn { flex: 0 0 auto; }
+
+    .location { background: var(--paper); }
+    .location-panel { display: grid; grid-template-columns: 1fr .8fr; border: 1px solid var(--line); border-radius: var(--radius-l); overflow: hidden; }
+    .location-copy { padding: clamp(36px, 6vw, 72px); }
+    .location-copy h2 { margin-bottom: 1rem; }
+    .location-copy p { color: var(--muted); }
+    .pickup-note { margin: 1.6rem 0; padding: 1.2rem 1.3rem; border: 1px solid var(--line); border-left: 3px solid var(--poppy); border-radius: 0 14px 14px 0; background: rgba(255,254,250,.7); }
+    .pickup-note strong { display: block; margin-bottom: .3rem; color: var(--ink); font-family: var(--serif); font-weight: 500; }
+    .pickup-note p { margin: 0; font-size: .92rem; }
+    .location-sign { min-height: 380px; position: relative; overflow: hidden; display: grid; place-items: center; padding: 2rem; background: var(--green-deep); color: white; text-align: center; }
+    .location-sign::before { content: "JEJU"; position: absolute; right: -2%; bottom: -10%; color: rgba(255,255,255,.06); font-family: var(--serif); font-size: clamp(6rem, 15vw, 11rem); font-weight: 700; }
+    .location-sign div { position: relative; z-index: 1; }
+    .location-sign small { display: block; margin-bottom: 1rem; color: #f0dfa0; font-family: var(--hand); font-size: 1.4rem; font-weight: 400; letter-spacing: .02em; }
+    .location-sign strong { display: block; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 500; line-height: 1.35; }
+
+    .contact-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
+    .pending-note { margin: 1.2rem auto 0 !important; font-size: .8rem; opacity: .8; }
+
+    .share-button {
+      position: fixed; z-index: 45; right: 22px; bottom: 24px;
+      display: grid; place-items: center; width: 52px; height: 52px; padding: 0;
+      border: 1px solid rgba(82,107,73,.28); border-radius: 50%;
+      background: rgba(255,254,250,.94); color: var(--green-deep);
+      box-shadow: 0 12px 30px rgba(62,57,52,.16); cursor: pointer;
+      backdrop-filter: blur(10px); transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+    .share-button:hover, .share-button:focus-visible { transform: translateY(-2px); background: var(--poppy); color: #fff; }
+    .share-button svg { width: 22px; height: 22px; }
+    .share-status {
+      position: fixed; z-index: 46; right: 84px; bottom: 30px;
+      max-width: min(260px, calc(100vw - 110px)); padding: .65rem .85rem;
+      border-radius: 12px; background: var(--ink); color: #fff; font-size: .84rem;
+      box-shadow: 0 10px 24px rgba(62,57,52,.18); opacity: 0; transform: translateY(6px);
+      pointer-events: none; transition: opacity .2s ease, transform .2s ease;
+    }
+    .share-status.show { opacity: 1; transform: none; }
+
+    .decor-piano {
+      position: absolute; z-index: 0; width: clamp(110px, 10vw, 150px); height: auto;
+      opacity: .95; pointer-events: none; user-select: none;
+      filter: drop-shadow(0 10px 12px rgba(82,68,54,.14));
+    }
+    .music-motif {
+      position: absolute; z-index: 0; display: grid; place-items: center;
+      width: clamp(76px, 7vw, 92px); height: clamp(76px, 7vw, 92px);
+      border: 1px solid rgba(114,90,71,.12); border-radius: 30px 42px 34px 44px;
+      background: rgba(255,254,250,.98); font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      font-size: clamp(2rem, 3vw, 2.7rem); line-height: 1; opacity: 1;
+      box-shadow: 0 10px 22px rgba(82,68,54,.12); pointer-events: none; user-select: none;
+    }
+    .why .container, .recital .container, .space .container, .blog .container { position: relative; z-index: 1; }
+    .piano-lesson { right: clamp(18px, 4vw, 64px); bottom: 12px; transform: rotate(3deg); }
+    .score-recital { left: clamp(22px, 6vw, 92px); bottom: 18px; transform: rotate(-6deg); }
+    .note-space { right: clamp(20px, 5vw, 78px); top: 22px; background: #f6c8bb; transform: rotate(7deg); }
+    .piano-blog { right: clamp(18px, 5vw, 78px); bottom: -6px; width: clamp(96px, 8vw, 126px); transform: rotate(4deg); }
+
+    footer { padding: 40px 0 110px; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; color: var(--muted); font-size: .82rem; }
+    .footer-brand { color: var(--ink); font-family: var(--serif); font-size: 1.1rem; }
+    .mobile-contact { display: none; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 960px) {
+      .nav-links { position: fixed; inset: 82px 0 auto; padding: 1.5rem 24px 2rem; background: var(--ivory); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: .4rem; transform: translateY(-140%); transition: transform .28s ease; }
+      .nav-links.open { transform: translateY(0); }
+      .nav-links a { padding: .75rem 0; font-size: 1rem; }
+      .nav-links .nav-cta { margin-top: .5rem; }
+      .menu-button { display: block; }
+      .hero-grid, .space-grid { grid-template-columns: 1fr; }
+      .recital-panel { grid-template-columns: 1fr; }
+      .hero { padding-top: 38px; }
+      .hero-copy { padding-bottom: 0; }
+      .hero-visual { min-height: 520px; max-width: 610px; width: 100%; margin-inline: auto; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .space-photo { min-height: 480px; }
+      .location-panel { grid-template-columns: 1fr; }
+      .location-sign { min-height: 280px; }
+      .recital-copy h2 { max-width: 72%; }
+      .recital-flower { right: 0; top: 76px; width: clamp(136px, 23vw, 174px); }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 32px, 1160px); }
+      .nav { height: 70px; }
+      .announcement { font-size: .72rem; }
+      .nav-links { inset-block-start: 70px; }
+      .brand small { display: none; }
+      h1 { font-size: clamp(2.45rem, 12vw, 3.55rem); }
+      h2 { font-size: clamp(1.92rem, 9vw, 2.7rem); }
+      .hero { padding: 34px 0 84px; }
+      .proof-inner { grid-template-columns: 1fr 1fr; }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .hero-actions .btn { flex: 1 1 150px; }
+      .hero-visual { min-height: 420px; }
+      .photo-shell { inset: 0 0 36px 18px; border-radius: 24px 92px 24px 24px; }
+      .hero-note { width: 58px; height: 58px; right: -4px; font-size: 1.8rem; }
+      .visual-caption { width: 180px; padding: .9rem 1rem; }
+      section { padding: 80px 0; }
+      .section-intro { margin-bottom: 36px; }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
+      .card-index { margin-bottom: 2.5rem; }
+      .space-photo { min-height: 390px; border-radius: 24px 76px 24px 24px; }
+      .blog-panel { align-items: flex-start; flex-direction: column; }
+      .blog-panel .btn { width: 100%; }
+      .location-copy { padding: 36px 24px; }
+      .footer-inner { flex-direction: column; }
+      .mobile-contact { display: flex; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40; min-height: 54px; align-items: center; justify-content: center; border-radius: 999px; background: var(--green-deep); color: white; font-weight: 800; box-shadow: 0 12px 30px rgba(48,58,43,.28); }
+      .share-button { right: 18px; bottom: 80px; width: 48px; height: 48px; }
+      .share-status { right: 76px; bottom: 86px; }
+      .decor-piano { width: 104px; opacity: .95; }
+      .music-motif { width: 68px; height: 68px; font-size: 2rem; }
+      .piano-lesson { right: 12px; bottom: 6px; }
+      .score-recital { left: 12px; bottom: 12px; }
+      .note-space { right: 12px; top: 10px; }
+      .piano-blog { right: 10px; bottom: -4px; width: 92px; }
+      .recital-copy h2 { max-width: 73%; }
+      .recital-flower { right: -8px; top: 82px; width: 122px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <div class="announcement"><strong>매주 화요일</strong>&nbsp; 좋아하는 음악을 연주하며 나다움을 발견하는 작은 무대가 열립니다&nbsp; ♪</div>
+  <header id="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="윤피아노교습소 처음으로">
+        <strong>윤피아노교습소</strong>
+        <small>YOON PIANO · AEWOL</small>
+      </a>
+      <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">메뉴</button>
+      <nav class="nav-links" aria-label="주요 메뉴">
+        <a href="#lesson">수업 방식</a>
+        <a href="#recital">화요일 연주회</a>
+        <a href="#space">공간 소개</a>
+        <a href="#blog">네이버 블로그</a>
+        <a href="#location">오시는 길</a>
+        <a class="nav-cta" href="#contact">수업 상담하기</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="hand-note">음악 속에서 만나는, 조금 더 빛나는 나 ♪</p>
+          <p class="eyebrow">제주 애월 · 하귀</p>
+          <h1>좋아하는 음악을<br>연주하며, <em>나다움을</em><br>찾아갑니다</h1>
+          <p class="lead">한 명 한 명의 속도와 성향을 세심하게 살피고, 아이에게 맞는 교재와 개별 진도로 음악의 기초와 연주의 즐거움을 차근차근 익혀갑니다.</p>
+          <ul class="supporting" aria-label="윤피아노의 특징">
+            <li>맞춤 개인 지도</li>
+            <li>소수정예 시간정원제</li>
+            <li>원장님 직접 지도</li>
+            <li>화요일 작은 연주회</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact">수업 상담하기</a>
+            <a class="btn secondary" href="#lesson">윤피아노 알아보기</a>
+          </div>
+          <p class="location-line"><span aria-hidden="true"></span><span>하귀초등학교 맞은편</span></p>
+        </div>
+        <div class="hero-visual reveal">
+          <span class="hero-note" aria-hidden="true">♫</span>
+          <div class="photo-shell">
+            <picture>
+              <source srcset="assets/yoon-piano-room.webp" type="image/webp">
+              <img src="assets/yoon-piano-room.png" width="1050" height="788" alt="식물과 알파카 인형, 밝은색 피아노가 놓인 윤피아노교습소의 실제 공간" fetchpriority="high">
+            </picture>
+          </div>
+          <div class="visual-caption"><b>밝게, 즐겁게, 자기답게</b><span>아이의 웃음과 음악이 함께 머무는 곳</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container proof-strip reveal" aria-label="윤피아노 핵심 운영 방식">
+      <div class="proof-inner">
+        <div class="proof-item"><small>아이에게 맞게</small><strong>아이별 맞춤 교재</strong></div>
+        <div class="proof-item"><small>한 명 한 명</small><strong>소수정예 시간정원제</strong></div>
+        <div class="proof-item"><small>처음부터 끝까지</small><strong>원장님 직접 지도</strong></div>
+        <div class="proof-item"><small>수업을 마친 뒤에도</small><strong>보호자를 기다리는 공간</strong></div>
+      </div>
+    </div>
+
+    <section class="why" id="lesson">
+      <img class="decor-piano piano-lesson" src="assets/grand-piano-motif.png" width="480" height="439" alt="" aria-hidden="true">
+      <div class="container">
+        <div class="section-intro reveal"><p class="eyebrow">Lesson</p><h2>아이를 진도에 맞추기보다,<br>아이에게 맞는 진도를 찾습니다.</h2><p class="lead">같은 나이의 아이도 배우는 속도와 집중하는 방법은 모두 다릅니다. 한 명 한 명을 살피며 현재 수준에 알맞은 수업을 이어갑니다.</p></div>
+        <div class="cards">
+          <article class="card reveal"><span class="card-index">01 · 아이에게 맞게</span><h3>아이별 맞춤 교재와 진도</h3><p>현재 수준과 배우는 속도를 살피며 아이에게 맞는 교재와 개별 진도로 지도합니다.</p></article>
+          <article class="card reveal"><span class="card-index">02 · 한 명 한 명</span><h3>소수정예 시간정원제</h3><p>정해진 시간의 인원을 조절해 한 명 한 명을 세심하게 살필 수 있도록 운영합니다.</p></article>
+          <article class="card reveal"><span class="card-index">03 · 처음부터 끝까지</span><h3>원장님 직접 지도</h3><p>원장님이 직접 수업을 맡아 아이의 학습 흐름을 이어서 살핍니다.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="recital" id="recital">
+      <span class="music-motif score-recital" aria-hidden="true">🎼</span>
+      <div class="container">
+        <div class="recital-panel reveal">
+          <div class="recital-copy">
+            <span class="recital-badge">매주 화요일 · GRAND PIANO DAY</span>
+            <p class="eyebrow">Tuesday Recital</p>
+            <img class="recital-flower" src="assets/recital-poppy-watercolor.png" width="560" height="560" alt="" aria-hidden="true">
+            <h2>화요일은,<br>작은 연주회가 열리는 날</h2>
+            <p class="lead">매주 화요일, 아이가 배우고 있는 교재에서 가장 좋아하는 곡을 직접 고릅니다. 뉴에이지, 동요, 반주곡처럼 마음이 가는 한 곡을 외워 그랜드피아노로 연주합니다.</p>
+            <p>직접 고른 곡이라 준비하는 시간부터 무대에 앉는 순간까지 아이들이 즐겁게 참여합니다. 곡의 분위기와 감정을 자기만의 연주로 표현하고, 한 곡을 완성해 낸 생생한 성취를 쌓습니다. 윤피아노의 화요일은 음악을 통해 자신의 취향을 발견하고 자신 있게 표현하는 법을 스스로 알아가는 보람찬 시간입니다.</p>
+          </div>
+          <div class="recital-flow" aria-label="화요일 작은 연주회 과정">
+            <article class="recital-step"><span>01</span><div><h3>좋아하는 곡 고르기</h3><p>배우는 교재 속에서 자신이 연주하고 싶은 한 곡을 직접 선택합니다.</p></div></article>
+            <article class="recital-step"><span>02</span><div><h3>차근차근 외우기</h3><p>한 음씩 익히며 곡을 이해하고 자기 것으로 만들어 갑니다.</p></div></article>
+            <article class="recital-step"><span>03</span><div><h3>나만의 느낌으로 표현하기</h3><p>그랜드피아노에서 준비한 곡을 연주하며 음악의 생동감과 무대의 즐거움을 경험합니다.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="space" id="space">
+      <span class="music-motif note-space" aria-hidden="true">🎵</span>
+      <div class="container space-grid">
+        <figure class="space-photo reveal">
+          <picture><source srcset="assets/yoon-piano-room.webp" type="image/webp"><img src="assets/yoon-piano-room.png" loading="lazy" width="1050" height="788" alt="피아노와 식물이 함께 놓인 윤피아노교습소의 실제 공간"></picture>
+        </figure>
+        <div class="space-copy reveal">
+          <p class="eyebrow">Yoon Piano Space</p>
+          <h2>수업을 마친 뒤에도<br>편안히 머물 수 있는 공간</h2>
+          <p class="lead">수업을 마친 아이는 보호자께서 도착하실 때까지 학원에 머물 수 있습니다.</p>
+          <ul class="space-features" aria-label="기다리는 동안 이용할 수 있는 것">
+            <li><strong>퍼즐</strong><p>퍼즐을 맞추며 여유롭게 기다릴 수 있습니다.</p></li>
+            <li><strong>만화책</strong><p>준비된 만화책을 읽으며 시간을 보낼 수 있습니다.</p></li>
+            <li><strong>자유롭게 연주하는 피아노</strong><p>기다리는 동안 공간에 마련된 피아노를 자유롭게 연주할 수 있습니다.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog" id="blog">
+      <img class="decor-piano piano-blog" src="assets/grand-piano-motif.png" width="480" height="439" alt="" aria-hidden="true">
+      <div class="container">
+        <div class="blog-panel reveal">
+          <div><p class="eyebrow">Naver Blog</p><h2>윤피아노의 자세한 이야기는<br>블로그에서 이어집니다.</h2><p>수업 이야기와 화요일 작은 연주회, 음악실의 일상과 새로운 소식을 전할 예정입니다.</p></div>
+          <span class="btn secondary" aria-disabled="true">네이버 블로그 준비 중</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="location">
+      <div class="container location-panel reveal">
+        <div class="location-copy" id="contact"><p class="eyebrow">Location & Contact</p><h2>하귀초등학교<br>맞은편에 있습니다.</h2><p>수업 방식이나 아이에게 맞는 시작점이 궁금하시면 편하게 문의해 주세요.</p><div class="pickup-note"><strong>차량은 운행하지 않습니다.</strong><p>수업을 마친 뒤 보호자께서 도착하실 때까지 학원에서 기다릴 수 있어, 퇴근 후 직접 픽업하실 수 있습니다.</p></div><p><strong>제주특별자치도 제주시 애월읍</strong><br><span>상세 주소 확인 후 표기 예정</span></p><div class="contact-actions"><span class="btn primary" aria-disabled="true">전화 문의</span><span class="btn secondary" aria-disabled="true">네이버 플레이스</span></div><p class="pending-note">연락처와 네이버 플레이스 주소 확인 후 버튼이 연결됩니다.</p></div>
+        <div class="location-sign" aria-label="윤피아노 위치 핵심 정보"><div><small>제주 애월, 가까운 곳에서 ♪</small><strong>하귀초등학교<br>맞은편</strong></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner"><div><div class="footer-brand">윤피아노교습소</div><div>좋아하는 음악을 연주하며, 나다움을 찾아갑니다</div></div><div>제주특별자치도 제주시 애월읍 · 하귀초등학교 맞은편<br>상세 사업자 정보 확인 후 표기 예정</div></div>
+  </footer>
+  <a class="mobile-contact" href="#contact">편하게 상담 문의하기</a>
+  <button class="share-button" type="button" aria-label="홈페이지 공유하기" title="홈페이지 공유하기">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="18" cy="5" r="2.5" stroke="currentColor" stroke-width="1.8"></circle>
+      <circle cx="6" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8"></circle>
+      <circle cx="18" cy="19" r="2.5" stroke="currentColor" stroke-width="1.8"></circle>
+      <path d="M8.2 10.8l7.6-4.5M8.2 13.2l7.6 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </svg>
+  </button>
+  <div class="share-status" role="status" aria-live="polite"></div>
+
+  <script>
+    const header = document.querySelector('#header');
+    const progress = document.querySelector('.scroll-progress');
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
+    const shareButton = document.querySelector('.share-button');
+    const shareStatus = document.querySelector('.share-status');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let shareStatusTimer;
+
+    function showShareStatus(message) {
+      window.clearTimeout(shareStatusTimer);
+      shareStatus.textContent = message;
+      shareStatus.classList.add('show');
+      shareStatusTimer = window.setTimeout(() => shareStatus.classList.remove('show'), 2400);
+    }
+
+    async function copyPageAddress() {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(window.location.href);
+      } else {
+        const input = document.createElement('textarea');
+        input.value = window.location.href;
+        input.setAttribute('readonly', '');
+        input.style.position = 'fixed';
+        input.style.opacity = '0';
+        document.body.appendChild(input);
+        input.select();
+        const copied = document.execCommand('copy');
+        input.remove();
+        if (!copied) throw new Error('copy_failed');
+      }
+      showShareStatus('홈페이지 주소를 복사했습니다.');
+    }
+
+    shareButton.addEventListener('click', async () => {
+      const shareData = {
+        title: '윤피아노교습소',
+        text: '좋아하는 음악을 연주하며, 나다움을 찾아갑니다.',
+        url: window.location.href
+      };
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          await copyPageAddress();
+        }
+      } catch (error) {
+        if (error && error.name === 'AbortError') return;
+        try {
+          await copyPageAddress();
+        } catch (copyError) {
+          showShareStatus('주소를 복사하지 못했습니다. 주소창에서 복사해 주세요.');
+        }
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (height > 0 ? (window.scrollY / height) * 100 : 0) + '%';
+    }, { passive: true });
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.textContent = open ? '닫기' : '메뉴';
+      document.body.classList.toggle('menu-open', open);
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = '메뉴';
+      document.body.classList.remove('menu-open');
+    }));
+
+    const items = document.querySelectorAll('.reveal');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      items.forEach(item => item.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      items.forEach(item => observer.observe(item));
+    }
+  </script>
+</body>
+</html>
