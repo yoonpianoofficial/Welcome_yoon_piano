@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://oapi.map.naver.com">
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Hahmlet:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-  <script defer src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=1q3ouc51s3&callback=initYoonPianoMap"></script>
+  <script defer src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=1q3ouc51s3"></script>
   <meta name="description" content="제주 애월 하귀초등학교 맞은편. 원장님이 직접 맞춤 지도하며, 매주 화요일에는 아이가 교재에서 고른 곡을 연주하는 작은 연주회가 열리는 소수정예 피아노 교습소입니다.">
   <meta name="theme-color" content="#fffaf2">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
@@ -269,10 +269,9 @@
     .location-map-wrap { min-height: 430px; position: relative; overflow: hidden; background: var(--green-deep); }
     .location-map-frame { position: absolute; z-index: 2; left: clamp(34px, 5vw, 58px); right: clamp(34px, 5vw, 58px); top: 180px; bottom: 56px; min-height: 300px; overflow: hidden; border: 3px solid rgba(255,255,255,.72); border-radius: 24px; background: #e8ede5; box-shadow: 0 18px 45px rgba(32,47,28,.24); }
     .location-map { position: absolute; inset: 0; width: 100%; height: 100%; }
-    .location-map-fallback { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; padding: 2rem; background: var(--green-deep); color: white; text-align: center; }
+    .location-map-fallback { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; padding: 2rem; background: #edf0e9; color: var(--green-deep); text-align: center; }
     .location-map-wrap.map-ready .location-map-fallback { display: none; }
-    .location-map-fallback small { display: block; margin-bottom: .7rem; color: #f0dfa0; font-family: var(--hand); font-size: 1.35rem; }
-    .location-map-fallback strong { display: block; font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.7rem); font-weight: 500; line-height: 1.4; }
+    .location-map-fallback span { font-size: .9rem; font-weight: 700; }
     .map-open-link { position: absolute; z-index: 5; right: 14px; top: 14px; padding: .7rem .9rem; border: 1px solid rgba(77,66,55,.16); border-radius: 12px; background: rgba(255,254,250,.96); color: var(--green-deep); box-shadow: 0 7px 22px rgba(62,57,52,.15); font-size: .86rem; font-weight: 700; line-height: 1.2; }
     .map-open-link:hover, .map-open-link:focus-visible { background: var(--green-deep); color: #fff; }
 
@@ -523,7 +522,7 @@
         <div class="location-map-wrap" id="location-map-wrap">
           <div class="location-map-frame">
             <div class="location-map" id="naver-map" role="region" aria-label="윤피아노교습소 위치를 표시한 네이버 지도"></div>
-            <div class="location-map-fallback" aria-hidden="true"><div><small>제주 애월, 가까운 곳에서 ♪</small><strong>하귀초등학교<br>맞은편</strong></div></div>
+            <div class="location-map-fallback" aria-hidden="true"><span>네이버 지도를 불러오는 중입니다.</span></div>
           </div>
           <a class="map-open-link" href="https://naver.me/GFs34DB0" target="_blank" rel="noopener noreferrer">큰 지도 보기</a>
         </div>
@@ -563,14 +562,25 @@
         logoControlOptions: { position: naver.maps.Position.BOTTOM_LEFT }
       });
 
-      new naver.maps.Marker({
+      const marker = new naver.maps.Marker({
         position: academyPosition,
         map: map,
         title: '윤피아노교습소'
       });
 
+      const infoWindow = new naver.maps.InfoWindow({
+        content: '<div style="padding:9px 12px;font-family:sans-serif;font-size:13px;font-weight:700;white-space:nowrap;color:#3e3934;">윤피아노교습소</div>',
+        borderWidth: 0,
+        backgroundColor: '#fffefa',
+        anchorColor: '#fffefa',
+        pixelOffset: new naver.maps.Point(0, -8)
+      });
+      infoWindow.open(map, marker);
+
       mapWrap.classList.add('map-ready');
     }
+
+    window.addEventListener('DOMContentLoaded', initYoonPianoMap);
 
     const header = document.querySelector('#header');
     const progress = document.querySelector('.scroll-progress');
